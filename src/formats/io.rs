@@ -165,7 +165,7 @@ pub fn get_operator_and_filename_from_file(file: String) -> (Operator, String) {
     };
 
     let filename = if file.starts_with("s3://") {
-        file[5..].split("/").collect::<Vec<&str>>().join("/")
+        file[5..].split("/").collect::<Vec<&str>>()[1..].join("/")
     } else {
         file.to_string()
     };
